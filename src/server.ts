@@ -18,3 +18,4 @@ const server = app.listen(config.PORT)
   }
 })()
 
+export default app;
