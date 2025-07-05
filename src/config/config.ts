@@ -1,7 +1,9 @@
 import dotenvFlow from 'dotenv-flow'
 
-
+if(process.env.NODE_ENV === 'development') {
 dotenvFlow.config();
+
+}
 
 export default {
   ENV : process.env.ENV ,
