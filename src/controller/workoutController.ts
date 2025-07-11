@@ -1,7 +1,7 @@
 import { Request, Response } from 'express'
 import { WorkoutModel, zodWorkoutSchema } from '../model/workout.model'
 
-const handleError = (res: Response, status: number, message: unknown) => {
+export const handleError = (res: Response, status: number, message: unknown) => {
   let error = 'An unexpected error occurred'
   if (typeof message === 'string') {
     error = message

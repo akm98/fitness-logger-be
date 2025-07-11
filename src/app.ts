@@ -4,6 +4,7 @@ import cors, { CorsOptions } from 'cors'
 import bodyParser from 'body-parser'
 import workoutRouter from './router/workoutRouter'
 import path from 'path'
+import userRouter from './router/user.router'
 
 const corsOptions: CorsOptions = {
   origin: '*', // or specific origins
@@ -14,13 +15,14 @@ const corsOptions: CorsOptions = {
 const app: Express = express()
 
 // middlewares
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cors(corsOptions))
 
 // routes
 app.use('/api/v1', workoutRouter)
+app.use('/api/v1/user', userRouter)
 
 export default app
 
